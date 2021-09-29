@@ -1,4 +1,4 @@
-# (서비스 명)
+# Trending Korean Film/Dramas in US
 
 - 최종 서비스 명을 위 괄호 부분에 작성하세요.
 - 최종 서비스의 한 줄 소개를 작성하세요.
@@ -37,7 +37,7 @@ success!
 
 ## 4. 프로젝트 구성도
 
-- 와이어프레임/스토리보드 추가
+- https://whimsical.com/ott-4-FPoYe9mS1QWWxTa7g16iTo
 
 ## 5. 프로젝트 팀원 역할 분담
 
