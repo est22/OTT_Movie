@@ -40,25 +40,25 @@
 
 ```
   elice_project
-  │
-  ├─ manage.py
-  │
-  ├─ config
-  │ ├─ **init**.py
-  │ ├─ settings.py
-  │ ├─ urls.py
-  │ └─ wsgi.py
-  │
-  └─ users
-  ├─ **init**.py
-  ├─ admin.py
-  ├─ apps.py
-  ├─ models.py
-  ├─ tests.py
-  ├─ views.py
-  │
-  └─ migrations
-  └─ **init**.py
+    │
+    ├─ manage.py
+    │
+    ├─ config
+    │   ├─ __init__.py
+    │   ├─ settings.py
+    │   ├─ urls.py
+    │   └─ wsgi.py
+    │
+    └─ users (application..)
+        ├─ __init__.py
+        ├─ admin.py
+        ├─ apps.py
+        ├─ models.py
+        ├─ tests.py
+        ├─ views.py
+        │
+        └─ migrations
+            └─ __init__.py
 ```
 
 ## 5. 프로젝트 팀원 역할 분담
