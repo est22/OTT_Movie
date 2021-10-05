@@ -35,7 +35,7 @@
 
 ## 4. 프로젝트 구성도
 
-- https://whimsical.com/ott-4-FPoYe9mS1QWWxTa7g16iTo
+- https://whimsical.com/award-VRBWgEi7VUx1wqA8zfCdEv
 - 프로젝트 디렉토리 구조
   elice_project
   │
