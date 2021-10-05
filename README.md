@@ -37,6 +37,8 @@
 
 - https://whimsical.com/award-VRBWgEi7VUx1wqA8zfCdEv
 - 프로젝트 디렉토리 구조
+
+```
   elice_project
   │
   ├─ manage.py
@@ -57,6 +59,7 @@
   │
   └─ migrations
   └─ **init**.py
+```
 
 ## 5. 프로젝트 팀원 역할 분담
 
