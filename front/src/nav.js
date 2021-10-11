@@ -7,10 +7,10 @@ import './App.css';
 
 function Navigation() {
     return (
-        <div className="Navigation">
+        <div className="Navigation ">
             <Navbar bg="primary" expand="lg" variant="dark">
   <Navbar.Brand href="#">Movie Awards 수상작 모아보기</Navbar.Brand>
-  <Navbar.Toggle aria-controls="navbarScroll" />
+  <Navbar.Toggle aria-controls="navbarScroll " />
   <Navbar.Collapse id="navbarScroll">
     <Nav
       className="mr-auto my-2 my-lg-0"
