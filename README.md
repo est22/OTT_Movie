@@ -3,7 +3,6 @@
 - 최종 서비스 명을 위 괄호 부분에 작성하세요.
 - 최종 서비스의 한 줄 소개를 작성하세요.
 
-
 ## 프로젝트 구성 안내
 
 - `bullet point 에 적힌 내용을 수정해 주시면 됩니다.`
@@ -36,7 +35,31 @@
 
 ## 4. 프로젝트 구성도
 
-- https://whimsical.com/ott-4-FPoYe9mS1QWWxTa7g16iTo
+- https://whimsical.com/award-VRBWgEi7VUx1wqA8zfCdEv
+- 프로젝트 디렉토리 구조
+
+```
+  elice_project
+    │
+    ├─ manage.py
+    │
+    ├─ config
+    │   ├─ __init__.py
+    │   ├─ settings.py
+    │   ├─ urls.py
+    │   └─ wsgi.py
+    │
+    └─ users (application..)
+        ├─ __init__.py
+        ├─ admin.py
+        ├─ apps.py
+        ├─ models.py
+        ├─ tests.py
+        ├─ views.py
+        │
+        └─ migrations
+            └─ __init__.py
+```
 
 ## 5. 프로젝트 팀원 역할 분담
 
