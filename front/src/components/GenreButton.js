@@ -10,7 +10,7 @@ function GenreButton() {
         <Button variant ="outline-info" size="lg" href="https://www.naver.com">Romance</Button>{' '}
         <Button variant ="outline-warning" size="lg" href="https://www.naver.com">S/F</Button>{' '}
         <Button variant ="outline-success" size="lg" href="https://www.naver.com">Action</Button>{' '}
-        <Button variant ="outline-success" size="lg" href="https://www.naver.com">Action</Button>{' '}
+        <Button variant ="outline-danger" size="lg" href="https://www.naver.com">Thriller</Button>{' '}
         </>
 
     );

@@ -1,9 +1,7 @@
 import React from 'react';
-// import bootstrap
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import './App.css';
+import '../App.css';
 
 function Navigation() {
     return (
