@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 
 
+
 // App을 BrowserRouter로 감싸기
 ReactDOM.render(
   <BrowserRouter> 
