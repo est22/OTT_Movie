@@ -9,7 +9,6 @@ const Home = () => {
 
         <div className="d-flex flex-wrap justify-content-center gap-4 mb-2 p-5 align-items-start flex-direction:row bd-highlight" >
           <GenreButton/>
-          <GenreButton/>
         </div> 
 
     </div>
