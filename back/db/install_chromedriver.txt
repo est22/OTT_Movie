@@ -1,0 +1,2 @@
+웹 자동화를 위해 석영, 리아는 mac용 chromedriver를 설치하세염.
+chromedriver.exe를 크롤링 파일과 같은 파일에 위치하도록 하세염.
