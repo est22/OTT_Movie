@@ -12,4 +12,4 @@ def main():
     GET : 
     POST : 
     '''
-    return "<html><body><h1>헬로 월드~</h1></body></html>"
+    return "<html><body><h1>hello world</h1></body></html>"
