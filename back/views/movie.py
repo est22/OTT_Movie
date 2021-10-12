@@ -2,14 +2,14 @@ from flask import redirect, request, render_template, jsonify, Blueprint, sessio
 from models import *
 from datetime import datetime
 
-api = Blueprint('main', __name__, url_prefix='/')
+api = Blueprint('movie', __name__, url_prefix='/')
 
 
-@api.route('/', methods=['GET', 'POST'])
-def main():
+@api.route('/movie', methods=['GET', 'POST'])
+def movie():
     '''
     parameter : 
     GET : 
     POST : 
     '''
-    return "<html><body><h1>헬로 월드~</h1></body></html>"
+    return
