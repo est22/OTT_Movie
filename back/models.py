@@ -56,16 +56,15 @@ class Genre(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     genre_name = db.Column(db.String(255))
+
     movie = db.relationship(
         'Movie', secondary=movie_genre, backref="movie_genre")
 
 
 '''영화-장르 연결테이블'''
 movie_genre = db.Table('movie_genre',
-                       db.Column('movie_id', db.Integer, db.ForeignKey(
-                           'movie.id'), primary_key=True),
-                       db.Column('genre_id', db.Integer, db.ForeignKey(
-                           'genre.id'), primary_key=True),
+    db.Column('movie_id', db.Integer, db.ForeignKey('movie.id'), primary_key=True),
+    db.Column('genre_id', db.Integer, db.ForeignKey('genre.id'), primary_key=True),
                        )
 
 
