@@ -16,16 +16,16 @@ class Movie(db.Model):
     storyline = db.Column(db.Text, nullable=False)  # 영화의 줄거리
     user_rating = db.Column(db.Integer, nullable=False)  # 유저평점
     critic_rating = db.Column(db.Integer)  # 전문가평점
-    img_link = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
+    img = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
     review_summary = db.Column(db.Text)  # imdb리뷰요약
 
     # movie:review = 1:n
     reviews = db.relationship('Review', backref='movie')
     # movie:user = n:n connect
-    topics = db.relationship('User', secondary=movie_user,
+    user_data = db.relationship('User', secondary=movie_user,
                              backref='movie')  # backref : 역참조
     # movie:genre = n:n connect
-    topics = db.relationship('Genre', secondary=movie_genre, backref='movie')
+    genre_data = db.relationship('Genre', secondary=movie_genre, backref='movie')
 
 
 class User(db.Model):
