@@ -10,6 +10,14 @@ with open('test_data.csv', 'r') as f:
     reader = csv.DictReader(f)
 
     for row in reader:
+        # img_link 수정
+        img_link = f"/static/img/{row['id']}"
+        try:
+            open(f'{img_link}.png')
+            img_link += '.png'
+        except:
+            img_link += '.jpg'
+
         award_year = datetime.strptime(
             row['award_year'], '%Y-%m-%d').date()
         # movie
@@ -20,9 +28,8 @@ with open('test_data.csv', 'r') as f:
             award_year=row['award_year'],
         )
         # genre
-        movie = Movie(
+        genre = Genre(
             id=int(row['id']),
-            genre_1=row['movie_name'],
         )
         db.session.add(movie)
     
