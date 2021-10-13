@@ -141,6 +141,5 @@ cython_debug/
 # Mac
 .DS_Store
 
-
 # npm
 front/node_modules
