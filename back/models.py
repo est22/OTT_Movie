@@ -75,7 +75,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String(255), nullable=False)
-    write_time = db.Column(db.DateTime, default=datetime.utcnow())  # 작성 시간
+    write_time = db.Column(db.DateTime, default=datetime.utcnow(), nullable=False)  # 작성 시간
     content = db.Column(db.Text(), nullable=False)  # 댓글 내용
     rating = db.Column(db.Integer, nullable=False)  # 평가 별점
 
