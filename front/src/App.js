@@ -3,7 +3,6 @@ import { Route, Link } from 'react-router-dom';
 import Home from './templates/Home';
 
 
-
 const App = () => {
   return (
     <div>
@@ -11,7 +10,7 @@ const App = () => {
       {/* <Link to="/">라우팅 테스트</Link> */}
 
       {/* <hr /> */}
-        
+
       <Route path="/" exact={true} component={Home} />
     </div>
 
