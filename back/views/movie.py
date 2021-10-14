@@ -14,10 +14,6 @@ def movie():
     보여줄 때 movie.ranking이 높은 순서대로
     POST : 없음
     '''
-<<<<<<< HEAD
-
-    return
-=======
     # 해당 연도 영화 데이터를 가져온다
     movie_data = Movie.query.filter(Movie.award_year == year_id).all()
 
@@ -28,7 +24,6 @@ def movie():
 
     movie_info = Movie.query.filter(
         Movie.award_year == year_id).order_by(Movie.ranking.desc()).all()
->>>>>>> back
 
     # movie_info 보내주기
     return movie_info
