@@ -11,12 +11,10 @@ def create_app():
     db.init_app(app)
 
     # 블루프린트
-    # from views import main, movie, user
-    # app.register_blueprint(main.api)
-    # app.register_blueprint(movie.api)
-    # app.register_blueprint(user.api)
-    from views import main
-    app.register_blueprint(main.api)
+    from views import auth, movie, user
+    app.register_blueprint(auth.api)
+    app.register_blueprint(movie.api)
+    app.register_blueprint(user.api)
 
     # 시크릿 키 (나중에 수정)
     app.secret_key = "secret_key_for_session"
