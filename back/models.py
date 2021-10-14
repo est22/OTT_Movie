@@ -22,6 +22,9 @@ class Movie(db.Model):
     genre2 = db.Column(db.String(255))  # 장르2
     genre3 = db.Column(db.String(255))  # 장르3
     genre4 = db.Column(db.String(255))  # 장르4
+    genre5 = db.Column(db.String(255))  # 장르5
+    genre6 = db.Column(db.String(255))  # 장르6
+    genre7 = db.Column(db.String(255))  # 장르7
 
     # # movie:review = 1:n
     # reviews = db.relationship('Review', backref='movie')
