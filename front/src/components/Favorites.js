@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Favorites() {
     return (
-        "sdfsdfsdfsdf"
+        "즐겨찾기"
 
 
     );

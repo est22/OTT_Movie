@@ -1,10 +1,15 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
+=======
+import { Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
+import { Route, Router, Switch, Link } from 'react-router-dom';
+>>>>>>> front
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import Mypage from '../templates/Mypage';
 
 function Navigation() {
+<<<<<<< HEAD
   return (
     <div className="Navigation ">
       <Navbar bg="primary" expand="lg" variant="dark">
@@ -37,6 +42,31 @@ function Navigation() {
           </Form>
         </Navbar.Collapse>
       </Navbar>
+=======
+    return (
+        <div className="Navigation ">
+            <Navbar bg="primary" expand="lg" variant="dark">
+
+    <Navbar.Brand href="#">Movie Awards 수상작 모아보기</Navbar.Brand>
+
+  <Navbar.Toggle aria-controls="navbarScroll " />
+  <Navbar.Collapse id="navbarScroll">
+    <Nav
+      className="mr-auto my-2 my-lg-0"
+      style={{ maxHeight: '100px' }}
+      navbarScroll
+    >
+      <Nav.Link href="Login">로그인</Nav.Link>
+      <Nav.Link href="Join">회원가입</Nav.Link>
+      <NavDropdown title="마이페이지" id="navbarScrollingDropdown">
+        <NavDropdown.Item href="Favorites">즐겨찾기</NavDropdown.Item>
+        <NavDropdown.Item href="Myreview">내 리뷰</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+
+  </Navbar.Collapse>
+</Navbar>
+>>>>>>> front
 
     </div>
   );
