@@ -1,17 +1,16 @@
 from flask import redirect, request, render_template, jsonify, Blueprint, session, g, url_for, flash
 from models import *
 from flask_bcrypt import Bcrypt
-from werkzeug.security import generate_password_hash, check_password_hash   # Bcrypt에 포함되어있음
+# from werkzeug.security import generate_password_hash, check_password_hash   # Bcrypt에 포함되어있음
 from flask_login import login_required, login_user, current_user, logout_user
 
-api = Blueprint('user', __name__, url_prefix='/user')
+api = Blueprint('auth', __name__, url_prefix='/auth')
 bcrypt = Bcrypt()
 
 
 @api.route('/register', methods=['GET', 'POST'])
 def register():
     '''
-    parameter : 
     GET : 회원가입
     POST : user db와 비교해서 새로운 유저 생성
     '''
@@ -67,23 +66,17 @@ def register():
 @api.route('/login', methods=["GET", "POST"])
 def login():
     '''
-    parameter : 
-    GET : 회원가입
-    POST : user db와 비교해서 새로운 유저 생성
-    '''
-    '''
-    보여지는 화면 : login.html
-    1. GET : 로그인
-    2. POST : user db와 비교해서 로그인 성공
+    GET : 로그인
+    POST : user db와 비교해서 로그인 성공
     '''
     if request.method == 'POST':
-        user_name = request.form['user_name']
-        password = request.form['password']
+        # user_name = request.form['user_name']
+        # password = request.form['password']
 
+        # front에서도 가능
         if not user_name:
             # flash('닉네임을 입력해주세요.')
             return render_template('login.html')
-
         if not password:
             # flash('비밀번호를 입력해주세요.')
             return render_template('login.html')
@@ -94,6 +87,7 @@ def login():
 
         # 사용자 존재하는 경우
         if user_data is not None:
+
             # 암호화된 비밀번호 일치 여부
             if bcrypt.check_password_hash(user_data.password, password):
                 # 세션 생성
@@ -127,9 +121,3 @@ def logout():
     session.clear()
     # flash("로그아웃 되었습니다.")
     return redirect("/")
-
-
-# 마이페이지
-@api.route('/info', methods=["GET", "POST"])
-def mypage():
-    return

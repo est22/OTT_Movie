@@ -5,21 +5,26 @@ from datetime import datetime
 api = Blueprint('user', __name__, url_prefix='/user')
 
 
-@api.route('/favorites', methods=['GET', 'POST'])
+@api.route('/favorites', methods=['GET'])
 def favorites():
     '''
-    parameter : 
-    GET : 
-    POST : 
+    GET : 해당 user가 좋아하는 영화 리스트 데이터를 반환
+    POST : 없음 (해당 영화 클릭시 영화의 페이지로 이동하도록 - front)
     '''
+    like_list = LikeMovie.query.filter(
+        LikeMovie.user_name == session['user_name']).all()
+
     return
 
 
 @api.route('/reviews', methods=['GET', 'POST'])
 def reviews():
     '''
-    parameter : user_id
-    GET : 
-    POST : 
+    GET : 해당 user가 작성한 모든 리뷰 데이터를 (어느영화든 상관없이) 전부 가져온다.
+    POST : (그 페이지에서) 리뷰 삭제
     '''
+    # 유튜브 댓글 모아서 삭제 로직 참고
+    if request.method == 'GET':
+        pass
+
     return
