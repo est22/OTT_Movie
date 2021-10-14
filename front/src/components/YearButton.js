@@ -9,12 +9,14 @@ function YearButton() {
         <>
         <Switch>
             <Route path="/2010">
-            <Button variant ="outline-primary" size="lg" href="https://www.naver.com" md="4">Comedy</Button>{' '}
+            <Button variant ="outline-primary" size="lg" href="MoviePage" md="4">2010</Button>{' '}
             </Route>
         </Switch>
 
         {/* 여기까지 1차 작업 */}
-        <Button variant ="outline-primary" size="lg" href="MoviePage.js" md="4">2010</Button>{' '}
+        <div className="d-flex flex-wrap justify-content-center gap-4 mb-2 p-5 align-items-start flex-direction:row bd-highlight" >
+            
+        <Button variant ="outline-primary" size="lg" href="MoviePage" md="4">2010</Button>{' '}
         <Button variant ="outline-info" size="lg" href="https://www.naver.com">2011</Button>{' '}
         <Button variant ="outline-warning" size="lg" href="https://www.naver.com">2012</Button>{' '}
         <Button variant ="outline-success" size="lg" href="https://www.naver.com">2013</Button>{' '}
@@ -26,6 +28,8 @@ function YearButton() {
         <Button variant ="outline-danger" size="lg" href="https://www.naver.com">2019</Button>{' '}
         <Button variant ="outline-primary" size="lg" href="https://www.naver.com" md="4">2020</Button>{' '}
         <Button variant ="outline-info" size="lg" href="https://www.naver.com">2021</Button>{' '}
+        
+        </div> 
         </>
 
     );
