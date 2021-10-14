@@ -9,13 +9,13 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     movie_name = db.Column(db.String(255), nullable=False)  # 영화이름
     ranking = db.Column(db.Integer, nullable=False)  # 영화의 순위
-    award_year = db.Column(db.Date, nullable=False)  # 수상연도
-    award_name = db.Column(db.String(255), nullable=False)  # 수상이름
-    release_year = db.Column(db.Date, nullable=False)  # 개봉연도
+    award_year = db.Column(db.Integer, nullable=False)  # 수상연도
+    award_name = db.Column(db.String(255))  # 수상이름
+    release_year = db.Column(db.Integer, nullable=False)  # 개봉연도
     running_time = db.Column(db.String(255), nullable=False)  # 러닝타임(상영시간)
     storyline = db.Column(db.Text, nullable=False)  # 영화의 줄거리
-    user_rating = db.Column(db.Integer, nullable=False)  # 유저평점
-    critic_rating = db.Column(db.Integer)  # 전문가평점
+    user_rating = db.Column(db.Float, nullable=False)  # 유저평점
+    critic_rating = db.Column(db.Float)  # 전문가평점
     img_url = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
     review_summary = db.Column(db.Text)  # imdb리뷰요약
     genre1 = db.Column(db.String(255), nullable=False)  # 장르1
@@ -71,7 +71,7 @@ class Review(db.Model):
     write_time = db.Column(
         db.DateTime, default=datetime.utcnow(), nullable=False)  # 작성 시간
     content = db.Column(db.Text(), nullable=False)  # 댓글 내용
-    rating = db.Column(db.Integer, nullable=False)  # 평가 별점
+    review_rating = db.Column(db.Integer, nullable=False)  # 평가 별점
 
     # movie:review = 1:n (fk)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)

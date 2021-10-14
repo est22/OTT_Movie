@@ -1,3 +1,4 @@
+# DB에 주어진 csv데이터를 넣는 python 또는 sql을 실행
 import csv
 from datetime import date, datetime
 
@@ -6,22 +7,27 @@ from models import Movie
 
 session = db.session
 
-with open('test_data1.csv', 'r') as f:
+with open('/test_data.csv', 'r') as f:
     reader = csv.DictReader(f)
 
     for row in reader:
-        award_year = datetime.strptime(
-            row['award_year'], '%Y-%m-%d').date()
-        # movie
         movie = Movie(
             id=int(row['id']),
             movie_name=row['movie_name'],
+            ranking=int(row['ranking']),
+            award_year=int(row['award_year']),
             award_name=row['award_name'],
-            award_year=row['award_year'],
-        )
-        # genre
-        genre = Genre(
-            id=int(row['id']),
+            release_year=int(row['release_year']),
+            running_time=row['running_time'],
+            storyline=row['storyline'],
+            user_rating=float(row['user_rating']),
+            critic_rating=float(row['critic_rating']),
+            img_url=row['img_url'],
+            review_summary=row['review_summary'],
+            genre1=row['genre1'],
+            genre2=row['genre2'],
+            genre3=row['genre3'],
+            genre4=row['genre4'],
         )
         db.session.add(movie)
 

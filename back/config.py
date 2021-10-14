@@ -3,6 +3,6 @@ import os
 BASE_DIR = os.path.dirname(__file__)
 
 # mysql://<id>:<password>@<server url host>:<server url port>/<db name>
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:1124@localhost:3306/test_table'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:1124@localhost:3306/test_table1'
 # 메모리 사용량을 위해서 꺼둠
 SQLALCHEMY_TRACK_MODIFICATIONS = False
