@@ -9,9 +9,7 @@ const App = () => {
     <div>
 
         <Navigation/>
-      <Link to="/">라우팅 테스트</Link>
-
-      <hr />
+        <Home/>
         
       <Route path="/" exact={true} component={Home} />
       <div className="App">

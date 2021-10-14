@@ -7,6 +7,7 @@ import Favorites from '../components/Favorites';
 
 function Mypage() {
     return (
+
         <Tabs
             defaultActiveKey="home"
             transition={false}

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
+import { Route, Router, Switch, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-// import Mypage from '../templates/Mypage';
 
 function Navigation() {
     return (
         <div className="Navigation ">
             <Navbar bg="primary" expand="lg" variant="dark">
-  <Navbar.Brand href="#">Movie Awards 수상작 모아보기</Navbar.Brand>
+
+    <Navbar.Brand href="#">Movie Awards 수상작 모아보기</Navbar.Brand>
+
   <Navbar.Toggle aria-controls="navbarScroll " />
   <Navbar.Collapse id="navbarScroll">
     <Nav
@@ -16,7 +18,8 @@ function Navigation() {
       style={{ maxHeight: '100px' }}
       navbarScroll
     >
-      <Nav.Link href="#action1">로그인 / 회원가입</Nav.Link>
+      <Nav.Link href="Login.js">로그인</Nav.Link>
+      <Nav.Link href="Join.js">회원가입</Nav.Link>
       <NavDropdown title="마이페이지" id="navbarScrollingDropdown">
         <NavDropdown.Item href="#action2">즐겨찾기</NavDropdown.Item>
         <NavDropdown.Item href="#action3">내 리뷰</NavDropdown.Item>
