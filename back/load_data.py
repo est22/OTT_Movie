@@ -7,14 +7,14 @@ from models import Movie
 
 session = db.session
 
-with open('/test_data.csv', 'r') as f:
+with open('test_data.csv', 'r') as f:
     reader = csv.DictReader(f)
 
     for row in reader:
         movie = Movie(
             id=int(row['id']),
             movie_name=row['movie_name'],
-            ranking=int(row['ranking']),
+            ranking=row['ranking'],
             award_year=int(row['award_year']),
             award_name=row['award_name'],
             release_year=int(row['release_year']),
@@ -30,5 +30,4 @@ with open('/test_data.csv', 'r') as f:
             genre4=row['genre4'],
         )
         db.session.add(movie)
-
     db.session.commit()

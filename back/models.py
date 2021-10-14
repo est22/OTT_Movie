@@ -8,7 +8,7 @@ class Movie(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     movie_name = db.Column(db.String(255), nullable=False)  # 영화이름
-    ranking = db.Column(db.Integer, nullable=False)  # 영화의 순위
+    ranking = db.Column(db.Integer)  # 영화의 순위
     award_year = db.Column(db.Integer, nullable=False)  # 수상연도
     award_name = db.Column(db.String(255))  # 수상이름
     release_year = db.Column(db.Integer, nullable=False)  # 개봉연도
@@ -23,11 +23,11 @@ class Movie(db.Model):
     genre3 = db.Column(db.String(255))  # 장르3
     genre4 = db.Column(db.String(255))  # 장르4
 
-    # movie:review = 1:n
-    reviews = db.relationship('Review', backref='movie')
-    # movie:user = n:n connect
-    user_data = db.relationship('User', secondary=movie_user,
-                                backref='movie')  # backref : 역참조
+    # # movie:review = 1:n
+    # reviews = db.relationship('Review', backref='movie')
+    # # movie:user = n:n connect
+    # user_data = db.relationship('User', secondary=movie_user,
+    #                             backref='movie')  # backref : 역참조
     # # movie:genre = n:n connect
     # genre_data = db.relationship(
     #     'Genre', secondary=movie_genre, backref='movie')
