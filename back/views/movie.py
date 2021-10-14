@@ -2,7 +2,7 @@ from flask import redirect, request, render_template, jsonify, Blueprint, sessio
 from models import *
 from datetime import datetime
 
-api = Blueprint('movie', __name__, url_prefix='/')
+api = Blueprint('movie', __name__, url_prefix='/movie')
 
 
 @api.route('/movie', methods=['GET', 'POST'])

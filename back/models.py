@@ -16,16 +16,17 @@ class Movie(db.Model):
     storyline = db.Column(db.Text, nullable=False)  # 영화의 줄거리
     user_rating = db.Column(db.Integer, nullable=False)  # 유저평점
     critic_rating = db.Column(db.Integer)  # 전문가평점
-    img_link = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
+    img_url = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
     review_summary = db.Column(db.Text)  # imdb리뷰요약
 
     # movie:review = 1:n
     reviews = db.relationship('Review', backref='movie')
     # movie:user = n:n connect
     user_data = db.relationship('User', secondary=movie_user,
-                             backref='movie')  # backref : 역참조
+                                backref='movie')  # backref : 역참조
     # movie:genre = n:n connect
-    genre_data = db.relationship('Genre', secondary=movie_genre, backref='movie')
+    genre_data = db.relationship(
+        'Genre', secondary=movie_genre, backref='movie')
 
 
 class User(db.Model):
@@ -63,8 +64,10 @@ class Genre(db.Model):
 
 '''영화-장르 연결테이블'''
 movie_genre = db.Table('movie_genre',
-    db.Column('movie_id', db.Integer, db.ForeignKey('movie.id'), primary_key=True),
-    db.Column('genre_id', db.Integer, db.ForeignKey('genre.id'), primary_key=True),
+                       db.Column('movie_id', db.Integer, db.ForeignKey(
+                           'movie.id'), primary_key=True),
+                       db.Column('genre_id', db.Integer, db.ForeignKey(
+                           'genre.id'), primary_key=True),
                        )
 
 
@@ -74,7 +77,8 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String(255), nullable=False)
-    write_time = db.Column(db.DateTime, default=datetime.utcnow(), nullable=False)  # 작성 시간
+    write_time = db.Column(
+        db.DateTime, default=datetime.utcnow(), nullable=False)  # 작성 시간
     content = db.Column(db.Text(), nullable=False)  # 댓글 내용
     rating = db.Column(db.Integer, nullable=False)  # 평가 별점
 
