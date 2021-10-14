@@ -20,11 +20,21 @@ const App = () => {
     
 
   <div className="App">
+    
+
+
 
     <Switch>  
       <Route exact path="/" exact={true} component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/join" component={Join} />
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+
+            <Route path="/login" component={Login} />
+            <Route path="/join" component={Join} />
+          
+        </div>
+      </div>
+      
       <Route path="/favorites" component={Favorites} />
       <Route path="/myreview" component={Myreview} />
       <Route path="/2010" component={MoviePage} />
