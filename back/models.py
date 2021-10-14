@@ -18,15 +18,19 @@ class Movie(db.Model):
     critic_rating = db.Column(db.Integer)  # 전문가평점
     img_url = db.Column(db.String(255), nullable=False)  # 포스터(이미지)
     review_summary = db.Column(db.Text)  # imdb리뷰요약
+    genre1 = db.Column(db.String(255), nullable=False)  # 장르1
+    genre2 = db.Column(db.String(255))  # 장르2
+    genre3 = db.Column(db.String(255))  # 장르3
+    genre4 = db.Column(db.String(255))  # 장르4
 
     # movie:review = 1:n
     reviews = db.relationship('Review', backref='movie')
     # movie:user = n:n connect
     user_data = db.relationship('User', secondary=movie_user,
                                 backref='movie')  # backref : 역참조
-    # movie:genre = n:n connect
-    genre_data = db.relationship(
-        'Genre', secondary=movie_genre, backref='movie')
+    # # movie:genre = n:n connect
+    # genre_data = db.relationship(
+    #     'Genre', secondary=movie_genre, backref='movie')
 
 
 class User(db.Model):
@@ -42,33 +46,20 @@ class User(db.Model):
         self.password = password
 
 
-'''영화-유저 연결테이블(favorite)'''
-movie_user = db.Table('movie_user',
-                      db.Column('movie_id', db.Integer, db.ForeignKey(
-                          'movie.id'), primary_key=True),
-                      db.Column('user_id', db.Integer, db.ForeignKey(
-                          'user.id'), primary_key=True)
-                      )
-
-
-class Genre(db.Model):
-    '''장르 테이블'''
-    __tablename__ = 'genre'
+class LikeMovie(db.Model):
+    '''유저가 좋아하는 영화 (관계테이블)'''
+    __tablename__ = 'likeMovie'
 
     id = db.Column(db.Integer, primary_key=True)
-    genre_name = db.Column(db.String(255))
+    user_name = db.Column(db.String(255), nullable=False)
+    movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
+    movie_data = db.relationship(
+        'Movie', foreign_keys='LikeMovie.movie_id')
 
-    movie = db.relationship(
-        'Movie', secondary=movie_genre, backref="movie_genre")
-
-
-'''영화-장르 연결테이블'''
-movie_genre = db.Table('movie_genre',
-                       db.Column('movie_id', db.Integer, db.ForeignKey(
-                           'movie.id'), primary_key=True),
-                       db.Column('genre_id', db.Integer, db.ForeignKey(
-                           'genre.id'), primary_key=True),
-                       )
+    def __init__(self, user_name, movie_id, movie_data):
+        self.user_name = user_name
+        self.movie_id = movie_id
+        self.movie_data = movie_data
 
 
 class Review(db.Model):
@@ -92,6 +83,34 @@ class Review(db.Model):
         self.rating = rating
         self.movie_id = movie_id
 
+
+# '''영화-유저 연결테이블(favorite)'''
+# movie_user = db.Table('movie_user',
+#                       db.Column('movie_id', db.Integer, db.ForeignKey(
+#                           'movie.id'), primary_key=True),
+#                       db.Column('user_id', db.Integer, db.ForeignKey(
+#                           'user.id'), primary_key=True)
+#                       )
+
+
+# class Genre(db.Model):
+#     '''장르 테이블'''
+#     __tablename__ = 'genre'
+
+#     id = db.Column(db.Integer, primary_key=True)
+#     genre_name = db.Column(db.String(255))
+
+#     movie = db.relationship(
+#         'Movie', secondary=movie_genre, backref="movie_genre")
+
+
+# '''영화-장르 연결테이블'''
+# movie_genre = db.Table('movie_genre',
+#                        db.Column('movie_id', db.Integer, db.ForeignKey(
+#                            'movie.id'), primary_key=True),
+#                        db.Column('genre_id', db.Integer, db.ForeignKey(
+#                            'genre.id'), primary_key=True),
+#                        )
 
 if __name__ == "__main__":
     db.create_all()
