@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import Mypage from '../templates/Mypage';
+// import Mypage from '../templates/Mypage';
 
 function Navigation() {
     return (
