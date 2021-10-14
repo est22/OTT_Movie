@@ -4,7 +4,7 @@ export default class Join extends Component {
     render() {
         return (
             <form>
-                <h3>Join</h3>
+                <h3>Sign Up</h3>
 
                 <div className="form-group">
                     <label>First name</label>
@@ -26,7 +26,7 @@ export default class Join extends Component {
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Join</button>
+                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
                 <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p>
