@@ -57,10 +57,12 @@ def register():
         db.session.commit()
 
         # flash("회원가입이 완료되었습니다. 로그인해주세요!😊")
-        return redirect("/login")
+        return jsonify()
+        # redirect("/login")
 
     # get방식인 경우
-    return render_template('register.html')
+    return jsonify()
+    # render_template('register.html')
 
 
 @api.route('/login', methods=["GET", "POST"])
