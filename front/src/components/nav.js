@@ -1,12 +1,17 @@
 import React from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
 =======
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
+=======
+import { Navbar, Nav, Form, FormControl, Button, NavDropdown,Container} from 'react-bootstrap';
+>>>>>>> front
 import { Route, Router, Switch, Link } from 'react-router-dom';
 >>>>>>> front
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
+import { alignPropType } from 'react-bootstrap/esm/DropdownMenu';
 
 function Navigation() {
 <<<<<<< HEAD
@@ -47,13 +52,16 @@ function Navigation() {
         <div className="Navigation ">
             <Navbar bg="primary" expand="lg" variant="dark">
 
-    <Navbar.Brand href="#">Movie Awards 수상작 모아보기</Navbar.Brand>
+            
+                <Navbar.Brand href="/">Movie Awards 수상작 모아보기</Navbar.Brand>
+
+                  
 
   <Navbar.Toggle aria-controls="navbarScroll " />
   <Navbar.Collapse id="navbarScroll">
     <Nav
-      className="mr-auto my-2 my-lg-0"
-      style={{ maxHeight: '100px' }}
+      className="mr-auto my-2 my-lg-0 "
+      style={{ maxHeight: '100px'}}
       navbarScroll
     >
       <Nav.Link href="Login">로그인</Nav.Link>
