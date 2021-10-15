@@ -8,12 +8,12 @@
 <body>
     <h1>main</h1>
     <nav>
-        <button><a href='{% url "auth/register"%}'>register</a></button>
-        <button><a href='{% url "auth/login"%}'>login</a></button>
-        <button><a href='{% url "auth/logout"%}'>logout</a></button>
+        <button><a href="/register">register</a></button>
+        <button><a href="/login">login</a></button>
+        <button><a href="/logout">logout</a></button>
         
-        <button><a href='{% url "user/favorites"%}'>like movie</a></button>
-        <button><a href='{% url "user/reviews"%}'>review movie</a></button>
+        <button><a href="/favorites">like movie</a></button>
+        <button><a href="/reviews">review movie</a></button>
     </nav>
     <div>
         <!-- <button><a href='{% url "detail"%}'>romance</a></button> -->

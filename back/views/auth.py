@@ -4,7 +4,7 @@ from flask_bcrypt import Bcrypt
 # from werkzeug.security import generate_password_hash, check_password_hash   # Bcrypt에 포함되어있음
 from flask_login import login_required, login_user, current_user, logout_user
 
-api = Blueprint('auth', __name__, url_prefix='/auth')
+api = Blueprint('auth', __name__, url_prefix='/')
 bcrypt = Bcrypt()
 
 
@@ -19,26 +19,22 @@ def register():
         password = request.form['password']
         password2 = request.form['password2']
 
+        # 이름 입력 안됨
         if not user_name:
             # flash('이름을 입력해주세요.')
             return render_template('register.html')
+            # return jsonify({"result": "user name none"})
 
+        # 비밀번호가 없음
         if not password or not password2:
             # flash('비밀번호를 입력해주세요.')
             return render_template('register.html')
+            # return jsonify({"result": "password null"})
+
+        # 비밀번호가 일치하지 않음
         if password != password2:
             # flash('비밀번호가 일치하지 않습니다.')
             return render_template('register.html')
-        # if len(password) < 8:
-        #     # flash("비밀번호는 8자리 이상입니다.")
-        #     return render_template('register.html')
-        # if not any(char.isdigit() for char in password):
-        #     # flash('숫자가 포함되어야합니다.')
-        #     return render_template('register.html')
-        # special_char = '`~!@#$%^&*()_+|\\}{[]":;\'?><,./'
-        # if not any(char in special_char for char in password):
-        #     # flash('특수문자가 포함되어야합니다.')
-        #     return render_template('register.html')
 
         # 비밀번호 암호화
         pw_hash = bcrypt.generate_password_hash(password)
@@ -57,16 +53,11 @@ def register():
         db.session.commit()
 
         # flash("회원가입이 완료되었습니다. 로그인해주세요!😊")
-<<<<<<< HEAD
-        return jsonify()
-        # redirect("/login")
-=======
-        return redirect("auth/login")
->>>>>>> back
+        return redirect("/login")
 
     # get방식인 경우
-    return jsonify()
-    # render_template('register.html')
+    # return jsonify({"result": "user_none"})
+    return render_template('register.html')
 
 
 @api.route('/login', methods=["GET", "POST"])
@@ -82,10 +73,10 @@ def login():
         # front에서도 가능
         if not user_name:
             # flash('닉네임을 입력해주세요.')
-            return redirect("auth/login")
+            return redirect("/login")
         if not password:
             # flash('비밀번호를 입력해주세요.')
-            return redirect("auth/login")
+            return redirect("/login")
 
         # 사용자 db가져오기
         user_data = User.query.filter(
@@ -112,8 +103,9 @@ def login():
         # 사용자 없음
         else:
             flash("해당 닉네임이 없습니다. 회원가입해주세요.")
-            return redirect("/auth/register")
+            return redirect("/register")
             # return jsonify({"result": "user_none"})
+
     else:  # GET
         return render_template('login.html')
 
