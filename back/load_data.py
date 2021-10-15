@@ -7,7 +7,7 @@ from models import Movie
 
 session = db.session
 
-with open('test_data.csv', 'r') as f:
+with open('db/imdb_oscar_award_data.csv', 'r') as f:
     reader = csv.DictReader(f)
 
     for row in reader:
