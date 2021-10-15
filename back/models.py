@@ -10,7 +10,13 @@ class Movie(db.Model):
     movie_name = db.Column(db.String(255), nullable=False)  # 영화이름
     ranking = db.Column(db.Integer)  # 영화의 순위
     award_year = db.Column(db.Integer, nullable=False)  # 수상연도
-    award_name = db.Column(db.String(255))  # 수상이름
+    award_name1 = db.Column(db.String(255))  # 수상이름1
+    award_name2 = db.Column(db.String(255))  # 수상이름2
+    award_name3 = db.Column(db.String(255))  # 수상이름3
+    award_name4 = db.Column(db.String(255))  # 수상이름4
+    award_name5 = db.Column(db.String(255))  # 수상이름5
+    award_name6 = db.Column(db.String(255))  # 수상이름6
+    award_name7 = db.Column(db.String(255))  # 수상이름7
     release_year = db.Column(db.Integer, nullable=False)  # 개봉연도
     running_time = db.Column(db.String(255), nullable=False)  # 러닝타임(상영시간)
     storyline = db.Column(db.Text, nullable=False)  # 영화의 줄거리
