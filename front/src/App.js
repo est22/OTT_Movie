@@ -35,9 +35,15 @@ const App = () => {
 </div>
     
 
+<<<<<<< HEAD
       {/* <hr /> */}
 
       <Route path="/" exact={true} component={Home} />
+    </div>
+=======
+  
+>>>>>>> front
+
   );
 };
 
