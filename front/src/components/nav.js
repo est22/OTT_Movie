@@ -33,8 +33,8 @@ function Navigation() {
   </Navbar.Collapse>
 </Navbar>
 
-        </div>
-    );
+    </div>
+  );
 }
 
 export default Navigation;

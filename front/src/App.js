@@ -12,7 +12,6 @@ import MoviePage from './templates/MoviePage';
 import Myreview from './components/Myreview';
 import Favorites from './components/Favorites';
 
-
 const App = () => {
   return (  <div>
 

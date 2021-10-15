@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'DBold';
+  src: url('./fonts/KoPubWorld\ Dotum\ Bold.ttf');
+}
+
+@font-face {
+  font-family: 'DLight';
+  src: url('./fonts/KoPubWorld\ Dotum\ Light.ttf');
+}
+
+@font-face {
+  font-family: 'DMedium';
+  src: url('./fonts/KoPubWorld\ Dotum\ Medium.ttf');
+}
