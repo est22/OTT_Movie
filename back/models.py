@@ -6,7 +6,7 @@ class Movie(db.Model):
     '''영화 테이블'''
     __tablename__ = 'movie'
 
-    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     movie_name = db.Column(db.String(255), nullable=False)  # 영화이름
     ranking = db.Column(db.Integer)  # 영화의 순위
     award_year = db.Column(db.Integer, nullable=False)  # 수상연도

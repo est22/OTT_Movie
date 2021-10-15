@@ -91,20 +91,18 @@ def login():
                 session.clear()
                 session['user_name'] = user_data.user_name
                 # flash("로그인 완료")
-                return render_template("main.html")
-                # return jsonify(result='success')
+                return jsonify({"result": "success 로그인 완료 메인 페이지 보여줌"})
 
             # 비밀번호 일치하지 않음
             else:
-                flash("비밀번호를 다시 확인해주세요.")
-                return render_template('login.html')
-                # return jsonify({"result": "fail"})
+                # flash("비밀번호를 다시 확인해주세요.")
+                return jsonify({"result": "비번 없음"})
 
         # 사용자 없음
         else:
             flash("해당 닉네임이 없습니다. 회원가입해주세요.")
-            return redirect("/register")
-            # return jsonify({"result": "user_none"})
+            # return redirect("/register")
+            return jsonify({"result": "user_none"})
 
     else:  # GET
         return render_template('login.html')
