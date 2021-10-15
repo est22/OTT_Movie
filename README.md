@@ -41,24 +41,43 @@
 ```
   elice_project
     │
-    ├─ manage.py
+    ├─ back
+    │   ├─ db
+    │   │
+    │   ├─ views
+    │   │   ├─ main.py
+    │   │   ├─ movie.py
+    │   │   └─ user.py
+    │   ├─ app.py
+    │   ├─ config.py
+    │   ├─ db_connect.py
+    │   ├─ load_data.py
+    │   ├─ models.py
+    │   └─ requirements.txt
     │
-    ├─ config
-    │   ├─ __init__.py
-    │   ├─ settings.py
-    │   ├─ urls.py
-    │   └─ wsgi.py
-    │
-    └─ users (application..)
-        ├─ __init__.py
-        ├─ admin.py
-        ├─ apps.py
-        ├─ models.py
-        ├─ tests.py
-        ├─ views.py
+    └─ front
+        ├─ public
         │
-        └─ migrations
-            └─ __init__.py
+        └─ src
+            ├─ components
+            │   ├─ Favorites.js
+            │   ├─ GenreButton.js
+            │   ├─ Myreview.js
+            │   └─ nav.js
+            │
+            ├─ templates
+            │   ├─ Home.js
+            │   ├─ Join.js
+            │   ├─ Login.js
+            │   ├─ MoviePage.js
+            │   ├─ Mypage.js
+            │
+            ├─ App.css
+            ├─ App.js
+            ├─ index.css
+            └─ index.js
+
+
 ```
 
 ## 5. 프로젝트 팀원 역할 분담
