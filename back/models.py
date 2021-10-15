@@ -55,6 +55,7 @@ class LikeMovie(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_name = db.Column(db.String(255), nullable=False)
+
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
     movie_data = db.relationship(
         'Movie', foreign_keys='LikeMovie.movie_id')
