@@ -28,8 +28,8 @@ def register():
         # 비밀번호가 없음
         if not password or not password2:
             # flash('비밀번호를 입력해주세요.')
-            return render_template('register.html')
-            # return jsonify({"result": "password null"})
+            # return render_template('register.html')
+            return jsonify({"result": "password null"})
 
         # 비밀번호가 일치하지 않음
         if password != password2:
